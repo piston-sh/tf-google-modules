@@ -37,5 +37,5 @@ resource "google_compute_firewall" "firewall" {
     ports    = var.allowed_inbound_udp_ports
   }
 
-  source_ranges = var.destination_cidr_block
+  source_ranges = [var.destination_cidr_block]
 }
