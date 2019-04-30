@@ -30,8 +30,8 @@ resource "google_compute_router_peer" "router_peer" {
 
 resource "google_compute_router_interface" "router_interface" {
   name       = "${var.network_name}-router-interface${var.tunnel_number}"
-  router     = "google_compute_router.router.name
-  region     = "google_compute_router.router.region
-  ip_range   = "var.source_internal_address_cidr
-  vpn_tunnel = "google_compute_vpn_tunnel.vpn_tunnel.name
+  router     = google_compute_router.router.name
+  region     = google_compute_router.router.region
+  ip_range   = var.source_internal_address_cidr
+  vpn_tunnel = google_compute_vpn_tunnel.vpn_tunnel.name
 }
